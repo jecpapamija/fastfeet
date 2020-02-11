@@ -26,6 +26,10 @@ class RecipientController {
     const { id, name, email } = await Recipient.create(request.body);
     return response.json({ id, name, email });
   }
+
+  async update(request, response) {
+
+  }
 }
 
 export default new RecipientController();
