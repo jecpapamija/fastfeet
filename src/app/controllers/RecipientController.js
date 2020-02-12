@@ -28,7 +28,9 @@ class RecipientController {
   }
 
   async update(request, response) {
-
+    const recipient = await Recipient.findByPk(request.userId);
+    const { id, name, provider } = await recipient.update(request.body);
+    return response.json({ id, name, email, provider });
   }
 }
 
